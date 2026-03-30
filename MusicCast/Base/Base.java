@@ -20,7 +20,7 @@ public class Base {
         this.totalClassificacao++;
         this.classificacao += nota;
 
-        // Média real
+        // Média
         double media = this.classificacao / this.totalClassificacao;
         setClassificacao(media);
     }

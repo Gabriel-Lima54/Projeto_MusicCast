@@ -12,57 +12,56 @@ public class Musica extends Base implements Reproduzivel, Interagivel {
 
     @Override
     public void reproduzir() {
-        System.out.println("Reproduzindo música...");
+        System.out.printf("Reproduzindo música...%n");
         setTotalReproducoes(getTotalReproducoes() + 1);
     }
 
     @Override
     public void pausar() {
-        System.out.println("Música pausada!");
+        System.out.printf("Música pausada!%n");
     }
 
     @Override
     public void parar() {
-        System.out.println("Música parada!");
+        System.out.printf("Música parada!%n");
     }
 
     @Override
     public void curtir() {
-        System.out.println("Música curtida!");
+        System.out.printf("Música curtida!%n");
         setTotalCurtidas(getTotalCurtidas() + 1);
     }
 
     @Override
     public void exibeInfos() {
-        System.out.println("Exibindo informações...%n");
+        System.out.printf("Exibindo informações...%n");
         System.out.printf("%s%n", getTitulo());
         System.out.printf("Duração: %d%n", getDuracao());
-        System.out.printf("Albúm: %s", getAlbum());
-        System.out.printf("Cantor: %s", getCantor());
-        System.out.printf("Gênero: %s", getGenero());
+        System.out.printf("Albúm: %s%n", getAlbum());
+        System.out.printf("Cantor: %s%n", getCantor());
+        System.out.printf("Gênero: %s%n", getGenero());
         System.out.printf("%d curtidas%n", getTotalCurtidas());
         System.out.printf("%d Reproduções%n", getTotalReproducoes());
-        System.out.printf("Classificação: %.1f ", getTotalClassificacao());
+        System.out.printf("Classificação: %.1f%n", getTotalClassificacao());
         if (getTotalClassificacao() > 7){
-            System.out.println("Essa música está bombando!");
+            System.out.printf("Essa música está bombando!%n");
         } else {
-            System.out.println("Não esqueça de deicar uma nota!");
+            System.out.printf("Não esqueça de deixar uma nota!%n");
         }
         if (getTotalReproducoes() < 100){
-            System.out.println("Música lançamento!");
+            System.out.printf("Música lançamento!%n");
         }
     }
 
     @Override
     public void compartilha() {
-        System.out.printf("%s foi compartilhada com os amigos!", getTitulo());
+        System.out.printf("%s foi compartilhada com os amigos!%n", getTitulo());
     }
 
     @Override
     public void favorita() {
-        String favorito = scan.nextLine();
-        setMusicaFavorita(favorito);
-        System.out.printf("%s agora é sua música favorita!", getTitulo());
+        setMusicaFavorita(getTitulo());
+        System.out.printf("%s agora é sua música favorita!%n", getTitulo());
     }
 
     //Getters e Setters
